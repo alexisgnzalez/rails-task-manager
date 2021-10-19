@@ -1,0 +1,21 @@
+
+<div>
+
+</div>
+<h1><%= @task.title %></h1>
+<%= link_to 'Edit Recipe', edit_task_path %>
+<div>
+  <p><%= @task.details %></p>
+</div>
+
+<form action="">
+  <% if @task.completed == true %>
+    <input type="checkbox" name="task<%= @task.id %>" checked>
+    <label for="task<%= @task.id %>">This task is completed</label><br>
+  <% else %>
+    <input type="checkbox" name="task<%= @task.id %>">
+    <label for="task<%= @task.id %>">This task is not completed</label><br>
+  <% end %>
+</form>
+
+<%= link_to 'Back to List', tasks_path %>

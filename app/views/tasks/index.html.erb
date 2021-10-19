@@ -1,0 +1,14 @@
+<h1>My Tasks</h1>
+
+<form>
+  <% @tasks.each_with_index do |task, index| %>
+    <% if task.completed == true %>
+      <input type="checkbox" name="task<%= index %>" checked>
+    <% else %>
+      <input type="checkbox" name="task<%= index %>">
+    <% end %>
+    <label for="task<%= index %>"><%= link_to task.title, task_path(task) %></label><br>
+  <% end %>
+</form>
+
+<%= link_to 'Create new task', new_task_path %>
