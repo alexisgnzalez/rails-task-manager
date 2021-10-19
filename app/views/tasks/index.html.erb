@@ -7,7 +7,11 @@
     <% else %>
       <input type="checkbox" name="task<%= index %>">
     <% end %>
-    <label for="task<%= index %>"><%= link_to task.title, task_path(task) %></label><br>
+    <label for="task<%= index %>"><%= link_to task.title, task_path(task) %></label>
+    <%= link_to 'Delete', task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+    <br>
   <% end %>
 </form>
 
